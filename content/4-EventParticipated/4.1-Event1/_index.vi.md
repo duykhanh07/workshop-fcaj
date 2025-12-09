@@ -82,7 +82,6 @@ Tham dự **AWS First Cloud Journey Workforce OJT Fall 2025 Kick-off** mang lạ
 - Sự hợp tác giữa trường và doanh nghiệp mở ra con đường sự nghiệp vững chắc  
 - Với tư duy đúng đắn, sinh viên có thể đạt được **thành công ý nghĩa** trong ngành công nghệ  
 
-#### Một số hình ảnh sự kiện
-*Thêm hình ảnh sự kiện tại đây*  
+![image](/images/4-Event/event.png)
 
 > Tổng thể, buổi Kick-off không chỉ mang lại kiến thức kỹ thuật mà còn truyền cảm hứng, giúp sinh viên Đại học FPT tự tin bắt đầu hành trình OJT với khát vọng và sự chuẩn bị vững chắc.

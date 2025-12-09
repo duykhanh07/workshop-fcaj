@@ -82,7 +82,6 @@ Attending the **AWS First Cloud Journey Workforce OJT Fall 2025 Kick-off** was h
 - Collaboration between universities and enterprises creates strong career pathways  
 - With the right mindset, students can achieve **meaningful success** in the tech industry  
 
-#### Some event photos
-*Add your event photos here*  
+![image](/images/4-Event/event.png) 
 
 > Overall, the kick-off event provided both technical knowledge and motivational insights, empowering FPT University students to embark on their OJT journey with confidence and ambition.
