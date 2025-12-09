@@ -1,0 +1,30 @@
+---
+title: "Worklog Week 8"
+#date: "`r Sys.Date()`"
+weight: 8
+chapter: false
+pre: " <b> 1.8. </b> "
+---
+### Week 8 Objectives:
+* Understand and practice identity management with IAM Identity Center and User/Group APIs.
+* Grasp the mechanism of limiting permissions using IAM Permission Boundary and conditions when switching Roles (Role Switching).
+* Get familiar with security services: Security Hub, AWS WAF, and security assessment standards.
+* Learn about monitoring – logging – encryption services like CloudTrail, KMS, and Athena.
+* Know how to use AWS Backup and SNS to build backup and notification sending processes.
+
+### Tasks to be carried out this week:
+
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --------- | ------------- | ---------------- | -------------- |
+| 2 | - Practice: IAM Identity Center Identity Store APIs <br> &emsp; + Environment Setup <br> &emsp; + Test Setup <br> &emsp; + Use case Prerequisites <br> &emsp; + AWS IAM Identity Center User and Group API Operations <br> &emsp; + Create User and add to the group <br> &emsp; + Update User’s Group Membership <br> &emsp; + AWS IAM Identity Center User and Group Audit Operations <br> - Translate Blog: <br> &emsp; + Announcing Amazon Quick Suite: your agentic teammate for answering questions and taking action <br> &emsp; + AWS Transfer Family SFTP connectors now support VPC-based connectivity <br> &emsp; + AWS Weekly Roundup: Amazon Quick Suite, Amazon EC2, Amazon EKS, and more (October 13, 2025) | 27/10/2025 | 27/10/2025 | https://cloudjourney.awsstudygroup.com/ and https://aws.amazon.com/vi/blogs/aws/reimagine-the-way-you-work-with-ai-agents-in-amazon-quick-suite/#:~:text=Today%2C%20we%E2%80%99re%20announcing%20Amazon%20Quick%20Suite%2C%20a%20new,and%20turns%20those%20insights%20into%20actions%20for%20you. and https://aws.amazon.com/vi/blogs/aws/aws-transfer-family-sftp-connectors-now-support-vpc-based-connectivity/ and https://aws.amazon.com/vi/blogs/aws/aws-weekly-roundup-amazon-quick-suite-amazon-ec2-amazon-eks-and-more-october-13-2025/ |
+| 3 | - Learn about IAM Permission Boundary <br> - Practice: Limit User Permissions with IAM Permission Boundary <br> &emsp; + Create Boundary Policy <br> &emsp; + Create Limited IAM User <br> &emsp; + Check if the user assigned permissions is restricted by Permission Boundary <br> - Practice: Limit Role switching by Condition <br> &emsp; + Create IAM Group <br> &emsp; + Create IAM Users and check their permissions <br> &emsp; + Configure Role Condition <br> &emsp;&emsp; + Create IAM Role with Administrative permissions <br> &emsp;&emsp; + Configure Switch role for IAM User <br> &emsp;&emsp; + Limit allowed time to Switch role <br> &emsp;&emsp; + Limit allowed IP to Switch role | 28/10/2025 | 28/10/2025 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Learn about AWS Security Hub, security standards <br> - Practice: Enable Security Hub via console <br> - Practice: Check assessment by each set of standards <br> - Learn about AWS Web Application Firewall <br> - Practice: perform environment creation for workshop including creating S3 bucket and deploying a Sample Application <br> &emsp; + Create S3 bucket <br> &emsp; + Deploy an OWASP Juice Shop Application <br> - Practice: Use AWS WAF <br> &emsp; + Deploy Web ACLs with managed rules <br> &emsp; + Create Custom Rule <br> &emsp; + Define WAF rule in JSON format. Complex logic needs to be defined using AND, OR, and NOT operators <br> &emsp; + Test new Rule <br> &emsp; + Log requests | 29/10/2025 | 29/10/2025 | https://cloudjourney.awsstudygroup.com/ and https://aws.amazon.com/vi/waf/ |
+| 5 | - Learn about AWS Key Management Service, AWS CloudTrail, Amazon Athena <br> - Practice: Manage Keys with Key Management Service (AWS KMS) <br> &emsp; + Create Policy, Role, Group, and User <br> &emsp; + Create KMS <br> &emsp; + Create Bucket and upload data to S3 <br> &emsp; + Create CloudTrail and log into CloudTrail <br> &emsp; + Create Amazon Athena and query data with Athena <br> &emsp; + Test and share encrypted data on S3 | 30/10/2025 | 30/10/2025 | https://cloudjourney.awsstudygroup.com/ and https://docs.aws.amazon.com/kms/latest/developerguide/overview.html and https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html and https://docs.aws.amazon.com/athena/latest/ug/what-is.html |
+| 6 | - Learn about AWS Backup, AWS Simple Notification Service <br> - Practice: Deploy system backup plan with AWS Backup <br> &emsp; + Create S3 bucket <br> &emsp; + Use AWS Backup to create a backup plan for resources running on AWS <br> &emsp; + Create Backup Plan <br> &emsp; + Use AWS SNS (Simple Notification Service) to send notifications related to ongoing backup activities <br> &emsp; + Check backup activity | 31/10/2025 | 31/10/2025 | https://cloudjourney.awsstudygroup.com/ and https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html and https://aws.amazon.com/vi/sns/ |
+
+### Week 8 Achievements:
+* Centrally manage users using IAM Identity Center: set up environment, create user/group, update permissions, and perform audit operations via API.
+* Enhance access control using Permission Boundary and Role Condition: limit user permissions, limit switch role by time/IP, and test actual permission delegation.
+* Deploy application layer security solutions: enable Security Hub, assess according to security standards; deploy AWS WAF with managed rules, custom rules, JSON rule logic, and log requests.
+* Manage encryption, monitor, and analyze logs: create KMS key, configure CloudTrail, upload S3 data, query logs using Athena, and test encrypted data sharing.
+* Set up system backup process with AWS Backup: create backup plan, configure backup resources, combine with SNS to send notifications, and check backup results.
