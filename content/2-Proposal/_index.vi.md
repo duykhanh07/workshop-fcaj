@@ -31,7 +31,7 @@ Giảm nhiều thời gian viết cover letter và chỉnh sửa CV. Tận dụn
 ### 3. Kiến trúc giải pháp  
 Nền tảng áp dụng kiến trúc AWS Serverless hoàn toàn (Full Serverless) để tối ưu hóa khả năng mở rộng và chi phí bảo trì. Giao diện người dùng được phân phối toàn cầu thông qua Amazon CloudFront và S3. Hệ thống backend sử dụng kiến trúc Microservices với AWS Lambda (Java Spring Cloud Function) để xử lý nghiệp vụ và Amazon Bedrock để tích hợp trí tuệ nhân tạo. Dữ liệu hồ sơ và đánh giá được quản lý tập trung bởi Amazon DynamoDB, đảm bảo hiệu năng cao và bảo mật.  
 
-![AI Career Coach Architecture](/images/2-Proposal/AI_Career_Coach_Architecture.png)
+![AI Career Coach Architecture](/images/2-Proposal/AI_Career_Coach_Architecture_v1.png)
 
 *Dịch vụ AWS sử dụng*
 - *Amazon CloudFront & S3*: Lưu trữ và phân phối giao diện Web với độ trễ thấp.

@@ -42,7 +42,7 @@ Tính năng thú vị nhất. Hệ thống sẽ sinh ra các câu hỏi trắc n
 
 Hãy nhìn vào sơ đồ luồng dữ liệu dưới đây:
 
-![AI Career Coach Architecture](/images/2-Proposal/AI_Career_Coach_Architecture.png)
+![AI Career Coach Architecture](/images/2-Proposal/AI_Career_Coach_Architecture_v1.png)
 
 ### Phân tích luồng đi (Data Flow):
 
