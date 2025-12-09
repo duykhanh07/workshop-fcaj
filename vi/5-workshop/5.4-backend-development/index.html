@@ -1,0 +1,387 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content><meta name=author content="thienlh@thienlu.com"><link rel=icon href=../../../images/favicon.png type=image/png><title>Phát triển Backend :: Báo cáo thực tập</title>
+<link href=../../../css/nucleus.css?1765276888 rel=stylesheet><link href=../../../css/fontawesome-all.min.css?1765276888 rel=stylesheet><link href=../../../css/hybrid.css?1765276888 rel=stylesheet><link href=../../../css/featherlight.min.css?1765276888 rel=stylesheet><link href=../../../css/perfect-scrollbar.min.css?1765276888 rel=stylesheet><link href=../../../css/auto-complete.css?1765276888 rel=stylesheet><link href=../../../css/atom-one-dark-reasonable.css?1765276888 rel=stylesheet><link href=../../../css/theme.css?1765276888 rel=stylesheet><link href=../../../css/hugo-theme.css?1765276888 rel=stylesheet><link href=../../../css/theme-workshop.css?1765276888 rel=stylesheet><script src=../../../js/jquery-3.3.1.min.js?1765276888></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=../../../vi/5-workshop/5.4-backend-development/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=../../../><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#f90;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=../../../js/lunr.min.js?1765276888></script><script type=text/javascript src=../../../js/auto-complete.js?1765276888></script><script type=text/javascript>var baseurl="https://duykhanh07.github.io/workshop-fcaj//vi"</script><script type=text/javascript src=../../../js/search.js?1765276888></script></div><div class=highlightable><ul class=topics><li data-nav-id=/vi/1-worklog/ title="Nhật ký công việc" class=dd-item><a href=../../../vi/1-worklog/><b>1. </b>Nhật ký công việc
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/1-worklog/1.1-week1/ title="Worklog Tuần 1" class=dd-item><a href=../../../vi/1-worklog/1.1-week1/><b>1.1. </b>Worklog Tuần 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.2-week2/ title="Worklog Tuần 2" class=dd-item><a href=../../../vi/1-worklog/1.2-week2/><b>1.2. </b>Worklog Tuần 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.3-week3/ title="Worklog Tuần 3" class=dd-item><a href=../../../vi/1-worklog/1.3-week3/><b>1.3. </b>Worklog Tuần 3
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.4-week4/ title="Worklog Tuần 4" class=dd-item><a href=../../../vi/1-worklog/1.4-week4/><b>1.4. </b>Worklog Tuần 4
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.5-week5/ title="Worklog Tuần 5" class=dd-item><a href=../../../vi/1-worklog/1.5-week5/><b>1.5. </b>Worklog Tuần 5
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.6-week6/ title="Worklog Tuần 6" class=dd-item><a href=../../../vi/1-worklog/1.6-week6/><b>1.6. </b>Worklog Tuần 6
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.7-week7/ title="Worklog Tuần 7" class=dd-item><a href=../../../vi/1-worklog/1.7-week7/><b>1.7. </b>Worklog Tuần 7
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.8-week8/ title="Worklog Tuần 8" class=dd-item><a href=../../../vi/1-worklog/1.8-week8/><b>1.8. </b>Worklog Tuần 8
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.9-week9/ title="Worklog Tuần 9" class=dd-item><a href=../../../vi/1-worklog/1.9-week9/><b>1.9. </b>Worklog Tuần 9
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.10-week10/ title="Worklog Tuần 10" class=dd-item><a href=../../../vi/1-worklog/1.10-week10/><b>1.10. </b>Worklog Tuần 10
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.11-week11/ title="Worklog Tuần 11" class=dd-item><a href=../../../vi/1-worklog/1.11-week11/><b>1.11. </b>Worklog Tuần 11
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.12-week12/ title="Worklog Tuần 12" class=dd-item><a href=../../../vi/1-worklog/1.12-week12/><b>1.12 </b>Worklog Tuần 12
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.13-week13/ title="Worklog Tuần 13" class=dd-item><a href=../../../vi/1-worklog/1.13-week13/><b>1.13 </b>Worklog Tuần 13
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/2-proposal/ title="Bản đề xuất" class=dd-item><a href=../../../vi/2-proposal/><b>2. </b>Bản đề xuất
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogstranslated/ title="Các bài blogs đã dịch" class=dd-item><a href=../../../vi/3-blogstranslated/><b>3. </b>Các bài blogs đã dịch
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/3-blogstranslated/3.1-blog1/ title="Blog 1" class=dd-item><a href=../../../vi/3-blogstranslated/3.1-blog1/><b>3.1. </b>Blog 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogstranslated/3.2-blog2/ title="Blog 2" class=dd-item><a href=../../../vi/3-blogstranslated/3.2-blog2/><b>3.2. </b>Blog 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogstranslated/3.3-blog3/ title="Blog 3" class=dd-item><a href=../../../vi/3-blogstranslated/3.3-blog3/><b>3.3. </b>Blog 3
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/4-eventparticipated/ title="Các events đã tham gia" class=dd-item><a href=../../../vi/4-eventparticipated/><b>4. </b>Các events đã tham gia
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=../../../vi/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/ title=Workshop class="dd-item
+parent"><a href=../../../vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.1-workshop-overview/ title="Giới thiệu" class=dd-item><a href=../../../vi/5-workshop/5.1-workshop-overview/><b>5.1. </b>Giới thiệu
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.2-prerequiste/ title="Các bước chuẩn bị" class=dd-item><a href=../../../vi/5-workshop/5.2-prerequiste/><b>5.2. </b>Các bước chuẩn bị
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.3-infrastructure-as-code/ title="Hạ tầng với SAM" class=dd-item><a href=../../../vi/5-workshop/5.3-infrastructure-as-code/><b>5.3. </b>Hạ tầng với SAM
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/ title="Phát triển Backend" class="dd-item
+active"><a href=../../../vi/5-workshop/5.4-backend-development/><b>5.4. </b>Phát triển Backend
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.1-user-functions/ title="User Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.1-user-functions/><b>5.4.1. </b>User Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.2-industry-functions/ title="Industry Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.2-industry-functions/><b>5.4.2. </b>Industry Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.3-resume-functions/ title="Resume Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.3-resume-functions/><b>5.4.3. </b>Resume Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.4-cover-letter-functions/ title="Cover Letter Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.4-cover-letter-functions/><b>5.4.4. </b>Cover Letter Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.5-assessment-functions/ title="Assessment Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.5-assessment-functions/><b>5.4.5. </b>Assessment Functions
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/5.5-frontend-development/ title="Phát triển Frontend" class=dd-item><a href=../../../vi/5-workshop/5.5-frontend-development/><b>5.5 </b>Phát triển Frontend
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.6-deploy/ title=Deploy class=dd-item><a href=../../../vi/5-workshop/5.6-deploy/><b>5.6. </b>Deploy
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.7-clean/ title="Dọn dẹp tài nguyên" class=dd-item><a href=../../../vi/5-workshop/5.7-clean/><b>5.7. </b>Dọn dẹp tài nguyên
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=../../../vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến" class=dd-item><a href=../../../vi/7-feedback/><b>7. </b>Chia sẻ, đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj/><i class='fab fa-facebook'></i> AWS Study Group</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://duykhanh07.github.io/workshop-fcaj/5-workshop/5.4-backend-development/>English</option><option id=vi value=https://duykhanh07.github.io/workshop-fcaj/vi/5-workshop/5.4-backend-development/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><b>Workshop</b><br><img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title=Migrate alt="web counter" border=0></a><br><b><a href=https://cloudjourney.awsstudygroup.com/>Cloud Journey</a></b><br><img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" alt="web counter" border=0>
+</left><left><br><br><b>Last Updated</b><br><i><span id=lastUpdated style=color:orange></span>
+</i><script>const today=new Date,formattedDate=today.toLocaleDateString("en-GB");document.getElementById("lastUpdated").textContent=formattedDate</script></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud Journey</a><br></i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=../../../vi/>Báo cáo thực tập</a> > <a href=../../../vi/5-workshop/>Workshop</a> > Phát triển Backend</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#1-cấu-trúc-dự-án-project-structure>1. Cấu trúc Dự án (Project Structure)</a><ul><li><a href=#các-package-chính>Các Package chính:</a></li></ul></li><li><a href=#2-bài-học-quan-trọng-cấu-hình-objectmapper->2. Bài học quan trọng: Cấu hình ObjectMapper ⚠️</a><ul><li><a href=#nguyên-nhân>Nguyên nhân</a></li><li><a href=#giải-pháp-manual-configuration>Giải pháp: Manual Configuration</a></li><li><a href=#3-abstractdynamorepositoryt>3. AbstractDynamoRepository<t></a></li><li><a href=#4-bedrockservice>4. BedrockService</a></li></ul></li><li><a href=#nội-dung-5-lambda-functions>Nội dung 5 Lambda Functions</a></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Phát triển Backend</h1><p>Trong phần này, chúng ta sẽ viết mã nguồn cho Backend sử dụng <strong>Java 17</strong> và framework <strong>Spring Cloud Function</strong>.</p><p>Mục tiêu là biến các logic nghiệp vụ (Business Logic) thành các hàm độc lập (Functions) có thể chạy trên AWS Lambda.</p><p>Xem source code backend <a href=https://github.com/duykhanh07/ai-career-coach/tree/main/backend>tại đây</a></p><h2 id=1-cấu-trúc-dự-án-project-structure>1. Cấu trúc Dự án (Project Structure)</h2><p>Dự án được xây dựng dựa trên Maven. Dưới đây là cấu trúc thư mục tiêu chuẩn:</p><p><img alt=backend src=../../../images/5-Workshop/5.4-Backend-development/backend.png></p><h3 id=các-package-chính>Các Package chính:</h3><ul><li><code>model</code>: Định nghĩa các Entity ánh xạ với DynamoDB (VD: <code>UserEntity</code>, <code>ResumeEntity</code>).</li><li><code>repository</code>: Interface giao tiếp với DynamoDB (sử dụng AWS SDK v2 Enhanced Client).</li><li><code>service</code>: Chứa logic nghiệp vụ và code gọi AI Bedrock.</li><li><code>functions</code>: Chứa các Bean Spring Cloud Function (Các điểm đầu vào của Lambda).</li><li><code>dto</code>: Các Data Transfer Object để nhận request từ Frontend.</li></ul><hr><h2 id=2-bài-học-quan-trọng-cấu-hình-objectmapper->2. Bài học quan trọng: Cấu hình ObjectMapper ⚠️</h2><p>Trong quá trình phát triển, chúng ta đã gặp một lỗi nghiêm trọng: <strong>Backend trả về object rỗng <code>{}</code> hoặc lỗi <code>500</code> dù logic chạy đúng.</strong></p><h3 id=nguyên-nhân>Nguyên nhân</h3><p>Mặc định, <code>ObjectMapper</code> của Jackson yêu cầu các class phải có Getter/Setter chuẩn (Java Bean standard) hoặc field phải là Public. Nếu Entity của chúng ta dùng Private field mà quên Getter, hoặc có cấu trúc phức tạp, Jackson sẽ không thể chuyển đổi (serialize) sang JSON.</p><h3 id=giải-pháp-manual-configuration>Giải pháp: Manual Configuration</h3><p>Thay vì dùng ObjectMapper mặc định của Spring, chúng ta tự khởi tạo và cấu hình &ldquo;mạnh tay&rdquo; hơn trong Constructor của các Function class:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#a6e22e>ResumeFunctions</span>(ResumeService resumeService) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>resumeService</span> <span style=color:#f92672>=</span> resumeService;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// --- CẤU HÌNH JACKSON THỦ CÔNG ---</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectMapper</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ObjectMapper();
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 1. Cho phép đọc/ghi trực tiếp vào field (kể cả private) mà không cần Getter/Setter</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectMapper</span>.<span style=color:#a6e22e>setVisibility</span>(PropertyAccessor.<span style=color:#a6e22e>FIELD</span>, JsonAutoDetect.<span style=color:#a6e22e>Visibility</span>.<span style=color:#a6e22e>ANY</span>);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 2. Bỏ qua lỗi nếu JSON đầu vào có trường thừa mà Java class không có</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectMapper</span>.<span style=color:#a6e22e>configure</span>(DeserializationFeature.<span style=color:#a6e22e>FAIL_ON_UNKNOWN_PROPERTIES</span>, <span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=3-abstractdynamorepositoryt>3. AbstractDynamoRepository<t></h3><ul><li>Lớp cha Generic Repository cho DynamoDB.</li><li>Cung cấp các thao tác CRUD chuẩn, log và validate.</li><li>@param <t>Loại Entity (Ví dụ: UserEntity)</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>abstract</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AbstractDynamoRepository</span><span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Logger chuẩn cho môi trường Production</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>final</span> Logger logger <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(getClass());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>final</span> DynamoDbTable<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> table;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>final</span> String tableName;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>AbstractDynamoRepository</span>(DynamoDbEnhancedClient client, Class<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> type) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>tableName</span> <span style=color:#f92672>=</span> System.<span style=color:#a6e22e>getenv</span>(<span style=color:#e6db74>&#34;TABLE_NAME&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 1. Validate Config ngay khi khởi động</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>tableName</span> <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>tableName</span>.<span style=color:#a6e22e>isEmpty</span>()) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;CRITICAL: Biến môi trường TABLE_NAME chưa được cấu hình!&#34;</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Missing TABLE_NAME environment variable&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>table</span> <span style=color:#f92672>=</span> client.<span style=color:#a6e22e>table</span>(tableName, TableSchema.<span style=color:#a6e22e>fromBean</span>(type));
+</span></span><span style=display:flex><span>        logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Initialized Repository for entity {} with table {}&#34;</span>, type.<span style=color:#a6e22e>getSimpleName</span>(), tableName);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ==================================================================================</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 1. CREATE / UPDATE (Upsert)</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ==================================================================================</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Lưu hoặc cập nhật một Item.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Trong DynamoDB, putItem sẽ ghi đè toàn bộ item nếu PK/SK trùng.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>save</span>(T item) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (item <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> IllegalArgumentException(<span style=color:#e6db74>&#34;Entity to save cannot be null&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;Saving item to table {}: {}&#34;</span>, tableName, item);
+</span></span><span style=display:flex><span>            table.<span style=color:#a6e22e>putItem</span>(item);
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Successfully saved item.&#34;</span>);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (DynamoDbException e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to save item to DynamoDB: {}&#34;</span>, e.<span style=color:#a6e22e>getMessage</span>(), e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Database Error: Could not save item&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Cập nhật item (Chỉ cập nhật các trường có giá trị, giữ nguyên các trường khác).
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Yêu cầu Entity phải có đủ PK và SK.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> T <span style=color:#a6e22e>update</span>(T item) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (item <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> IllegalArgumentException(<span style=color:#e6db74>&#34;Entity to update cannot be null&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;Updating item in table {}: {}&#34;</span>, tableName, item);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// updateItem sẽ trả về item đã được update</span>
+</span></span><span style=display:flex><span>            T updatedItem <span style=color:#f92672>=</span> table.<span style=color:#a6e22e>updateItem</span>(item);
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Successfully updated item.&#34;</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> updatedItem;
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (DynamoDbException e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to update item: {}&#34;</span>, e.<span style=color:#a6e22e>getMessage</span>(), e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Database Error: Could not update item&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ==================================================================================</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 2. READ (Find)</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ==================================================================================</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> T <span style=color:#a6e22e>findById</span>(String pk, String sk) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Validate input</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (pk <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> pk.<span style=color:#a6e22e>isEmpty</span>() <span style=color:#f92672>||</span> sk <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> sk.<span style=color:#a6e22e>isEmpty</span>()) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>warn</span>(<span style=color:#e6db74>&#34;FindById called with empty keys. PK: {}, SK: {}&#34;</span>, pk, sk);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span>; <span style=color:#75715e>// Hoặc throw Exception tùy logic nghiệp vụ</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            Key key <span style=color:#f92672>=</span> Key.<span style=color:#a6e22e>builder</span>().<span style=color:#a6e22e>partitionValue</span>(pk).<span style=color:#a6e22e>sortValue</span>(sk).<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;Fetching item with PK: {}, SK: {}&#34;</span>, pk, sk);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            T item <span style=color:#f92672>=</span> table.<span style=color:#a6e22e>getItem</span>(key);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (item <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>                logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Item not found for PK: {}, SK: {}&#34;</span>, pk, sk);
+</span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>                logger.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;Item found: {}&#34;</span>, item);
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> item;
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (DynamoDbException e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to find item: {}&#34;</span>, e.<span style=color:#a6e22e>getMessage</span>(), e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Database Error: Could not fetch item&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Tìm tất cả các Item có cùng Partition Key (PK).
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Đây là thao tác QUERY (Hiệu năng cao, rẻ tiền).
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Ví dụ: Lấy tất cả Resume, Letter, Assessment của User X (PK=USER#X)
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>findAllByPartitionKey</span>(String pk) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (pk <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> pk.<span style=color:#a6e22e>isEmpty</span>()) <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            QueryConditional queryConditional <span style=color:#f92672>=</span> QueryConditional.<span style=color:#a6e22e>keyEqualTo</span>(
+</span></span><span style=display:flex><span>                    Key.<span style=color:#a6e22e>builder</span>().<span style=color:#a6e22e>partitionValue</span>(pk).<span style=color:#a6e22e>build</span>()
+</span></span><span style=display:flex><span>            );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;Querying items with PK: {}&#34;</span>, pk);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// SDK trả về Iterable (Lazy load), ta convert sang List để dễ dùng</span>
+</span></span><span style=display:flex><span>            PageIterable<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> result <span style=color:#f92672>=</span> table.<span style=color:#a6e22e>query</span>(queryConditional);
+</span></span><span style=display:flex><span>            List<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> items <span style=color:#f92672>=</span> result.<span style=color:#a6e22e>items</span>().<span style=color:#a6e22e>stream</span>().<span style=color:#a6e22e>collect</span>(Collectors.<span style=color:#a6e22e>toList</span>());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Found {} items for PK: {}&#34;</span>, items.<span style=color:#a6e22e>size</span>(), pk);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> items;
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (DynamoDbException e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to query items by PK: {}&#34;</span>, e.<span style=color:#a6e22e>getMessage</span>(), e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Database Error: Could not query items&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * ⚠️ CẢNH BÁO: Quét toàn bộ bảng (SCAN).
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Rất tốn kém Read Capacity Unit (RCU) và chậm nếu bảng lớn.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Chỉ dùng cho các bảng nhỏ (như Industry) hoặc debug.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>findAll</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>warn</span>(<span style=color:#e6db74>&#34;PERFORMANCE WARNING: Executing full table SCAN on {}&#34;</span>, tableName);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> table.<span style=color:#a6e22e>scan</span>().<span style=color:#a6e22e>items</span>().<span style=color:#a6e22e>stream</span>().<span style=color:#a6e22e>collect</span>(Collectors.<span style=color:#a6e22e>toList</span>());
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (DynamoDbException e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to scan table: {}&#34;</span>, e.<span style=color:#a6e22e>getMessage</span>(), e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Database Error: Could not scan table&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ==================================================================================</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 3. DELETE</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ==================================================================================</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> T <span style=color:#a6e22e>delete</span>(String pk, String sk) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (pk <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> sk <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> IllegalArgumentException(<span style=color:#e6db74>&#34;Keys cannot be null for deletion&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            Key key <span style=color:#f92672>=</span> Key.<span style=color:#a6e22e>builder</span>().<span style=color:#a6e22e>partitionValue</span>(pk).<span style=color:#a6e22e>sortValue</span>(sk).<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Deleting item with PK: {}, SK: {}&#34;</span>, pk, sk);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// deleteItem trả về item cũ trước khi xóa (nếu có)</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> table.<span style=color:#a6e22e>deleteItem</span>(key);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (DynamoDbException e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to delete item: {}&#34;</span>, e.<span style=color:#a6e22e>getMessage</span>(), e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;Database Error: Could not delete item&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><h3 id=4-bedrockservice>4. BedrockService</h3><p>Lớp service này chuyên xử lý các tác vụ liên quan đến AI</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>BedrockService</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Logger logger <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(BedrockService.<span style=color:#a6e22e>class</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> BedrockRuntimeClient bedrockClient;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> ObjectMapper objectMapper;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Model ID lấy từ biến môi trường (Config trong template.yaml)</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> String modelId <span style=color:#f92672>=</span> System.<span style=color:#a6e22e>getenv</span>(<span style=color:#e6db74>&#34;BEDROCK_MODEL_ID&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>BedrockService</span>(ObjectMapper objectMapper) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>bedrockClient</span> <span style=color:#f92672>=</span> BedrockRuntimeClient.<span style=color:#a6e22e>builder</span>().<span style=color:#a6e22e>build</span>(); <span style=color:#75715e>// Tự lấy region từ môi trường</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectMapper</span> <span style=color:#f92672>=</span> objectMapper;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> IndustryInsightEntity <span style=color:#a6e22e>generateIndustryInsights</span>(String industry) {
+</span></span><span style=display:flex><span>        logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Calling AWS Bedrock to analyze industry: {}&#34;</span>, industry);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        String prompt <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             Analyze the current state of the %s industry and provide insights in ONLY the following JSON format without any additional notes or explanations:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;salaryRanges&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                 { &#34;role&#34;: &#34;string&#34;, &#34;min&#34;: number, &#34;max&#34;: number, &#34;median&#34;: number, &#34;location&#34;: &#34;string&#34; }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               ],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;growthRate&#34;: number,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;demandLevel&#34;: &#34;High&#34; | &#34;Medium&#34; | &#34;Low&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;topSkills&#34;: [&#34;skill1&#34;, &#34;skill2&#34;],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;marketOutlook&#34;: &#34;Positive&#34; | &#34;Neutral&#34; | &#34;Negative&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;keyTrends&#34;: [&#34;trend1&#34;, &#34;trend2&#34;],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>               &#34;recommendedSkills&#34;: [&#34;skill1&#34;, &#34;skill2&#34;]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             IMPORTANT: Return ONLY the JSON. No additional text, notes, or markdown formatting.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             Include at least 5 common roles for salary ranges.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             Growth rate should be a percentage float (e.g., 5.5).
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             Include at least 5 skills and trends.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>             &#34;&#34;&#34;</span>.<span style=color:#a6e22e>formatted</span>(industry);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Cấu trúc Body cho Claude 3</span>
+</span></span><span style=display:flex><span>        Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> payload <span style=color:#f92672>=</span> Map.<span style=color:#a6e22e>of</span>(
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;anthropic_version&#34;</span>, <span style=color:#e6db74>&#34;bedrock-2023-05-31&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;max_tokens&#34;</span>, 2000,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;messages&#34;</span>, java.<span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>List</span>.<span style=color:#a6e22e>of</span>(
+</span></span><span style=display:flex><span>                        Map.<span style=color:#a6e22e>of</span>(<span style=color:#e6db74>&#34;role&#34;</span>, <span style=color:#e6db74>&#34;user&#34;</span>, <span style=color:#e6db74>&#34;content&#34;</span>, prompt)
+</span></span><span style=display:flex><span>                )
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            String payloadJson <span style=color:#f92672>=</span> objectMapper.<span style=color:#a6e22e>writeValueAsString</span>(payload);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            InvokeModelRequest request <span style=color:#f92672>=</span> InvokeModelRequest.<span style=color:#a6e22e>builder</span>()
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>modelId</span>(modelId)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>body</span>(SdkBytes.<span style=color:#a6e22e>fromUtf8String</span>(payloadJson))
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>contentType</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>accept</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            InvokeModelResponse response <span style=color:#f92672>=</span> bedrockClient.<span style=color:#a6e22e>invokeModel</span>(request);
+</span></span><span style=display:flex><span>            String responseBody <span style=color:#f92672>=</span> response.<span style=color:#a6e22e>body</span>().<span style=color:#a6e22e>asString</span>(StandardCharsets.<span style=color:#a6e22e>UTF_8</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Parse response của Claude để lấy phần text</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Structure: { &#34;content&#34;: [ { &#34;text&#34;: &#34;...&#34; } ] }</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>var</span> jsonNode <span style=color:#f92672>=</span> objectMapper.<span style=color:#a6e22e>readTree</span>(responseBody);
+</span></span><span style=display:flex><span>            String aiText <span style=color:#f92672>=</span> jsonNode.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;content&#34;</span>).<span style=color:#a6e22e>get</span>(0).<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;text&#34;</span>).<span style=color:#a6e22e>asText</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Clean text (remove markdown ```json ... ```)</span>
+</span></span><span style=display:flex><span>            String cleanedJson <span style=color:#f92672>=</span> aiText.<span style=color:#a6e22e>replaceAll</span>(<span style=color:#e6db74>&#34;```json&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>).<span style=color:#a6e22e>replaceAll</span>(<span style=color:#e6db74>&#34;```&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>).<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;Cleaned AI JSON: {}&#34;</span>, cleanedJson);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Parse thành Entity</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> objectMapper.<span style=color:#a6e22e>readValue</span>(cleanedJson, IndustryInsightEntity.<span style=color:#a6e22e>class</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Failed to generate AI insights&#34;</span>, e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;AI Generation Failed: &#34;</span> <span style=color:#f92672>+</span> e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * Hàm gọi AI trả về Text thuần (dùng cho Resume improvement)
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>generateTextCorrection</span>(String prompt) {
+</span></span><span style=display:flex><span>        logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Calling Bedrock for Text Generation...&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Cấu trúc Body cho Claude 3</span>
+</span></span><span style=display:flex><span>        Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> payload <span style=color:#f92672>=</span> Map.<span style=color:#a6e22e>of</span>(
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;anthropic_version&#34;</span>, <span style=color:#e6db74>&#34;bedrock-2023-05-31&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;max_tokens&#34;</span>, 1000,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;messages&#34;</span>, java.<span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>List</span>.<span style=color:#a6e22e>of</span>(
+</span></span><span style=display:flex><span>                        Map.<span style=color:#a6e22e>of</span>(<span style=color:#e6db74>&#34;role&#34;</span>, <span style=color:#e6db74>&#34;user&#34;</span>, <span style=color:#e6db74>&#34;content&#34;</span>, prompt)
+</span></span><span style=display:flex><span>                )
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            String payloadJson <span style=color:#f92672>=</span> objectMapper.<span style=color:#a6e22e>writeValueAsString</span>(payload);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            InvokeModelRequest request <span style=color:#f92672>=</span> InvokeModelRequest.<span style=color:#a6e22e>builder</span>()
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>modelId</span>(modelId)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>body</span>(SdkBytes.<span style=color:#a6e22e>fromUtf8String</span>(payloadJson))
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>contentType</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>accept</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            InvokeModelResponse response <span style=color:#f92672>=</span> bedrockClient.<span style=color:#a6e22e>invokeModel</span>(request);
+</span></span><span style=display:flex><span>            String responseBody <span style=color:#f92672>=</span> response.<span style=color:#a6e22e>body</span>().<span style=color:#a6e22e>asString</span>(StandardCharsets.<span style=color:#a6e22e>UTF_8</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Parse response: { &#34;content&#34;: [ { &#34;text&#34;: &#34;...&#34; } ] }</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>var</span> jsonNode <span style=color:#f92672>=</span> objectMapper.<span style=color:#a6e22e>readTree</span>(responseBody);
+</span></span><span style=display:flex><span>            String aiText <span style=color:#f92672>=</span> jsonNode.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;content&#34;</span>).<span style=color:#a6e22e>get</span>(0).<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;text&#34;</span>).<span style=color:#a6e22e>asText</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> aiText.<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Bedrock Text Generation Failed&#34;</span>, e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;AI Service Unavailable&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Hàm mới: Tạo Quiz Questions</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>generateQuizJson</span>(String industry, String skills) {
+</span></span><span style=display:flex><span>        logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;Generating Quiz for {} with skills {}&#34;</span>, industry, skills);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        String prompt <span style=color:#f92672>=</span> String.<span style=color:#a6e22e>format</span>(<span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            Generate 10 technical interview questions for a %s professional with expertise in %s.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            Each question must be multiple choice with 4 options.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            Return the response in this JSON format only, no additional text, no markdown:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              &#34;questions&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                  &#34;question&#34;: &#34;string&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                  &#34;options&#34;: [&#34;string&#34;, &#34;string&#34;, &#34;string&#34;, &#34;string&#34;],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                  &#34;correctAnswer&#34;: &#34;string&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                  &#34;explanation&#34;: &#34;string&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              ]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;&#34;&#34;</span>, industry, skills);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> callBedrock(prompt);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Hàm tái sử dụng logic gọi Bedrock</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String <span style=color:#a6e22e>callBedrock</span>(String prompt) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Logic giống hệt hàm generateTextCorrection cũ, chỉ thay prompt</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// (Bạn có thể refactor code cũ để dùng chung hàm này cho gọn)</span>
+</span></span><span style=display:flex><span>        Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> payload <span style=color:#f92672>=</span> Map.<span style=color:#a6e22e>of</span>(
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;anthropic_version&#34;</span>, <span style=color:#e6db74>&#34;bedrock-2023-05-31&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;max_tokens&#34;</span>, 4000, <span style=color:#75715e>// Tăng token vì JSON quiz khá dài</span>
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;messages&#34;</span>, java.<span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>List</span>.<span style=color:#a6e22e>of</span>(Map.<span style=color:#a6e22e>of</span>(<span style=color:#e6db74>&#34;role&#34;</span>, <span style=color:#e6db74>&#34;user&#34;</span>, <span style=color:#e6db74>&#34;content&#34;</span>, prompt))
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            String payloadJson <span style=color:#f92672>=</span> objectMapper.<span style=color:#a6e22e>writeValueAsString</span>(payload);
+</span></span><span style=display:flex><span>            InvokeModelRequest request <span style=color:#f92672>=</span> InvokeModelRequest.<span style=color:#a6e22e>builder</span>()
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>modelId</span>(modelId)
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>body</span>(SdkBytes.<span style=color:#a6e22e>fromUtf8String</span>(payloadJson))
+</span></span><span style=display:flex><span>                    .<span style=color:#a6e22e>contentType</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>).<span style=color:#a6e22e>accept</span>(<span style=color:#e6db74>&#34;application/json&#34;</span>).<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>            InvokeModelResponse response <span style=color:#f92672>=</span> bedrockClient.<span style=color:#a6e22e>invokeModel</span>(request);
+</span></span><span style=display:flex><span>            String responseBody <span style=color:#f92672>=</span> response.<span style=color:#a6e22e>body</span>().<span style=color:#a6e22e>asString</span>(StandardCharsets.<span style=color:#a6e22e>UTF_8</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>var</span> jsonNode <span style=color:#f92672>=</span> objectMapper.<span style=color:#a6e22e>readTree</span>(responseBody);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> jsonNode.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;content&#34;</span>).<span style=color:#a6e22e>get</span>(0).<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;text&#34;</span>).<span style=color:#a6e22e>asText</span>().<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Bedrock Error&#34;</span>, e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;AI Error&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><h2 id=nội-dung-5-lambda-functions>Nội dung 5 Lambda Functions</h2><ul><li><a href=../../../vi/5-workshop/5.4-backend-development/5.4.1-user-functions/>UserFunctions</a></li><li><a href=../../../vi/5-workshop/5.4-backend-development/5.4.2-industry-functions/>IndustryFunctions</a></li><li><a href=../../../vi/5-workshop/5.4-backend-development/5.4.3-resume-functions/>ResumeFuunctions</a></li><li><a href=../../../vi/5-workshop/5.4-backend-development/5.4.4-cover-letter-functions/>CoverLetterFunctions</a></li><li><a href=../../../vi/5-workshop/5.4-backend-development/5.4.5-assessment-functions/>AssessmentFunctions</a></li></ul><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=../../../vi/5-workshop/5.3-infrastructure-as-code/ title="Hạ tầng với SAM"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../../../vi/5-workshop/5.4-backend-development/5.4.1-user-functions/ title="User Functions" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=../../../js/clipboard.min.js?1765276888></script><script src=../../../js/perfect-scrollbar.min.js?1765276888></script><script src=../../../js/perfect-scrollbar.jquery.min.js?1765276888></script><script src=../../../js/jquery.sticky.js?1765276888></script><script src=../../../js/featherlight.min.js?1765276888></script><script src=../../../js/highlight.pack.js?1765276888></script><script>hljs.initHighlightingOnLoad()</script><script src=../../../js/modernizr.custom-3.6.0.js?1765276888></script><script src=../../../js/learn.js?1765276888></script><script src=../../../js/hugo-learn.js?1765276888></script><link href=../../../mermaid/mermaid.css?1765276888 rel=stylesheet><script src=../../../mermaid/mermaid.js?1765276888></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>

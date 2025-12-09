@@ -1,0 +1,316 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content><meta name=author content="thienlh@thienlu.com"><link rel=icon href=../../../images/favicon.png type=image/png><title>Hạ tầng với SAM :: Báo cáo thực tập</title>
+<link href=../../../css/nucleus.css?1765276888 rel=stylesheet><link href=../../../css/fontawesome-all.min.css?1765276888 rel=stylesheet><link href=../../../css/hybrid.css?1765276888 rel=stylesheet><link href=../../../css/featherlight.min.css?1765276888 rel=stylesheet><link href=../../../css/perfect-scrollbar.min.css?1765276888 rel=stylesheet><link href=../../../css/auto-complete.css?1765276888 rel=stylesheet><link href=../../../css/atom-one-dark-reasonable.css?1765276888 rel=stylesheet><link href=../../../css/theme.css?1765276888 rel=stylesheet><link href=../../../css/hugo-theme.css?1765276888 rel=stylesheet><link href=../../../css/theme-workshop.css?1765276888 rel=stylesheet><script src=../../../js/jquery-3.3.1.min.js?1765276888></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=../../../vi/5-workshop/5.3-infrastructure-as-code/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=../../../><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#f90;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=../../../js/lunr.min.js?1765276888></script><script type=text/javascript src=../../../js/auto-complete.js?1765276888></script><script type=text/javascript>var baseurl="https://duykhanh07.github.io/workshop-fcaj//vi"</script><script type=text/javascript src=../../../js/search.js?1765276888></script></div><div class=highlightable><ul class=topics><li data-nav-id=/vi/1-worklog/ title="Nhật ký công việc" class=dd-item><a href=../../../vi/1-worklog/><b>1. </b>Nhật ký công việc
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/1-worklog/1.1-week1/ title="Worklog Tuần 1" class=dd-item><a href=../../../vi/1-worklog/1.1-week1/><b>1.1. </b>Worklog Tuần 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.2-week2/ title="Worklog Tuần 2" class=dd-item><a href=../../../vi/1-worklog/1.2-week2/><b>1.2. </b>Worklog Tuần 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.3-week3/ title="Worklog Tuần 3" class=dd-item><a href=../../../vi/1-worklog/1.3-week3/><b>1.3. </b>Worklog Tuần 3
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.4-week4/ title="Worklog Tuần 4" class=dd-item><a href=../../../vi/1-worklog/1.4-week4/><b>1.4. </b>Worklog Tuần 4
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.5-week5/ title="Worklog Tuần 5" class=dd-item><a href=../../../vi/1-worklog/1.5-week5/><b>1.5. </b>Worklog Tuần 5
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.6-week6/ title="Worklog Tuần 6" class=dd-item><a href=../../../vi/1-worklog/1.6-week6/><b>1.6. </b>Worklog Tuần 6
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.7-week7/ title="Worklog Tuần 7" class=dd-item><a href=../../../vi/1-worklog/1.7-week7/><b>1.7. </b>Worklog Tuần 7
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.8-week8/ title="Worklog Tuần 8" class=dd-item><a href=../../../vi/1-worklog/1.8-week8/><b>1.8. </b>Worklog Tuần 8
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.9-week9/ title="Worklog Tuần 9" class=dd-item><a href=../../../vi/1-worklog/1.9-week9/><b>1.9. </b>Worklog Tuần 9
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.10-week10/ title="Worklog Tuần 10" class=dd-item><a href=../../../vi/1-worklog/1.10-week10/><b>1.10. </b>Worklog Tuần 10
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.11-week11/ title="Worklog Tuần 11" class=dd-item><a href=../../../vi/1-worklog/1.11-week11/><b>1.11. </b>Worklog Tuần 11
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.12-week12/ title="Worklog Tuần 12" class=dd-item><a href=../../../vi/1-worklog/1.12-week12/><b>1.12 </b>Worklog Tuần 12
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.13-week13/ title="Worklog Tuần 13" class=dd-item><a href=../../../vi/1-worklog/1.13-week13/><b>1.13 </b>Worklog Tuần 13
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/2-proposal/ title="Bản đề xuất" class=dd-item><a href=../../../vi/2-proposal/><b>2. </b>Bản đề xuất
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogstranslated/ title="Các bài blogs đã dịch" class=dd-item><a href=../../../vi/3-blogstranslated/><b>3. </b>Các bài blogs đã dịch
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/3-blogstranslated/3.1-blog1/ title="Blog 1" class=dd-item><a href=../../../vi/3-blogstranslated/3.1-blog1/><b>3.1. </b>Blog 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogstranslated/3.2-blog2/ title="Blog 2" class=dd-item><a href=../../../vi/3-blogstranslated/3.2-blog2/><b>3.2. </b>Blog 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogstranslated/3.3-blog3/ title="Blog 3" class=dd-item><a href=../../../vi/3-blogstranslated/3.3-blog3/><b>3.3. </b>Blog 3
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/4-eventparticipated/ title="Các events đã tham gia" class=dd-item><a href=../../../vi/4-eventparticipated/><b>4. </b>Các events đã tham gia
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=../../../vi/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/ title=Workshop class="dd-item
+parent"><a href=../../../vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.1-workshop-overview/ title="Giới thiệu" class=dd-item><a href=../../../vi/5-workshop/5.1-workshop-overview/><b>5.1. </b>Giới thiệu
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.2-prerequiste/ title="Các bước chuẩn bị" class=dd-item><a href=../../../vi/5-workshop/5.2-prerequiste/><b>5.2. </b>Các bước chuẩn bị
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.3-infrastructure-as-code/ title="Hạ tầng với SAM" class="dd-item
+active"><a href=../../../vi/5-workshop/5.3-infrastructure-as-code/><b>5.3. </b>Hạ tầng với SAM
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/ title="Phát triển Backend" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/><b>5.4. </b>Phát triển Backend
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.1-user-functions/ title="User Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.1-user-functions/><b>5.4.1. </b>User Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.2-industry-functions/ title="Industry Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.2-industry-functions/><b>5.4.2. </b>Industry Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.3-resume-functions/ title="Resume Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.3-resume-functions/><b>5.4.3. </b>Resume Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.4-cover-letter-functions/ title="Cover Letter Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.4-cover-letter-functions/><b>5.4.4. </b>Cover Letter Functions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-backend-development/5.4.5-assessment-functions/ title="Assessment Functions" class=dd-item><a href=../../../vi/5-workshop/5.4-backend-development/5.4.5-assessment-functions/><b>5.4.5. </b>Assessment Functions
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/5.5-frontend-development/ title="Phát triển Frontend" class=dd-item><a href=../../../vi/5-workshop/5.5-frontend-development/><b>5.5 </b>Phát triển Frontend
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.6-deploy/ title=Deploy class=dd-item><a href=../../../vi/5-workshop/5.6-deploy/><b>5.6. </b>Deploy
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.7-clean/ title="Dọn dẹp tài nguyên" class=dd-item><a href=../../../vi/5-workshop/5.7-clean/><b>5.7. </b>Dọn dẹp tài nguyên
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=../../../vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến" class=dd-item><a href=../../../vi/7-feedback/><b>7. </b>Chia sẻ, đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj/><i class='fab fa-facebook'></i> AWS Study Group</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://duykhanh07.github.io/workshop-fcaj/5-workshop/5.3-infrastructure-as-code/>English</option><option id=vi value=https://duykhanh07.github.io/workshop-fcaj/vi/5-workshop/5.3-infrastructure-as-code/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><b>Workshop</b><br><img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title=Migrate alt="web counter" border=0></a><br><b><a href=https://cloudjourney.awsstudygroup.com/>Cloud Journey</a></b><br><img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" alt="web counter" border=0>
+</left><left><br><br><b>Last Updated</b><br><i><span id=lastUpdated style=color:orange></span>
+</i><script>const today=new Date,formattedDate=today.toLocaleDateString("en-GB");document.getElementById("lastUpdated").textContent=formattedDate</script></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud Journey</a><br></i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=../../../vi/>Báo cáo thực tập</a> > <a href=../../../vi/5-workshop/>Workshop</a> > Hạ tầng với SAM</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#1-cấu-hình-toàn-cục-globals>1. Cấu hình Toàn cục (Globals)</a></li><li><a href=#2-định-nghĩa-backend-lambda-functions>2. Định nghĩa Backend (Lambda Functions)</a></li><li><a href=#3-định-nghĩa-database--auth>3. Định nghĩa Database & Auth</a></li><li><a href=#4-cognito-user-pool>4. Cognito User Pool</a></li><li><a href=#5-frontend-hosting-s3--cloudfront-oac>5. Frontend Hosting (S3 + CloudFront OAC)</a></li><li><a href=#6-outputs-kết-quả-đầu-ra>6. Outputs (Kết quả đầu ra)</a></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Hạ tầng với SAM</h1><p>Thay vì phải click chuột thủ công hàng trăm lần trên AWS Console để tạo Database, Lambda, API Gateway&mldr; chúng ta sẽ sử dụng phương pháp <strong>Infrastructure as Code (IaC)</strong>.</p><p>Với <strong>AWS SAM (Serverless Application Model)</strong>, toàn bộ kiến trúc hệ thống được định nghĩa trong duy nhất một file: <code>template.yaml</code>.</p><hr><h2 id=1-cấu-hình-toàn-cục-globals>1. Cấu hình Toàn cục (Globals)</h2><p>Để tránh lặp lại code (Don&rsquo;t Repeat Yourself), chúng ta định nghĩa các thông số chung cho tất cả các hàm Lambda trong phần <code>Globals</code>.</p><pre tabindex=0><code>YAML
+
+Globals:
+  Function:
+    Timeout: 60 # Tăng lên 60s vì gọi AI Bedrock có thể lâu
+    MemorySize: 2048 # Java cần RAM khá để chạy mượt
+    Runtime: java17
+    Architectures: [x86_64]
+    Environment:
+      Variables:
+        TABLE_NAME: !Ref CoreTable
+        # ID của model Bedrock (Claude 3 Haiku)
+        BEDROCK_MODEL_ID: &#34;anthropic.claude-3-haiku-20240307-v1:0&#34;
+</code></pre><p>Với Java, RAM nhiều hơn đồng nghĩa với CPU mạnh hơn và thời gian khởi động (Cold Start) ngắn hơn. Kết hợp với tính năng SnapStart, ứng dụng sẽ phản hồi tức thì.</p><hr><h2 id=2-định-nghĩa-backend-lambda-functions>2. Định nghĩa Backend (Lambda Functions)</h2><p>Mỗi tính năng của chúng ta tương ứng với một resource <code>AWS::Serverless::Function</code></p><p>Bạn có thể xem các định nghĩa các lamda trong <code>template.yaml</code> <a href=https://github.com/duykhanh07/ai-career-coach>tại link github</a></p><p>Ví dụ với hàm <strong>Cover Letter:</strong></p><pre tabindex=0><code>YAML
+
+    CoverLetterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: backend/target/backend-0.0.1-SNAPSHOT-aws.jar
+      Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
+      Timeout: 60 # Gọi AI nên cần timeout lâu
+      MemorySize: 2048
+      SnapStart:
+        ApplyOn: PublishedVersions
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref CoreTable
+        - Statement:
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+                - bedrock:InvokeModelWithResponseStream
+                # Thêm quyền Marketplace để sửa lỗi AccessDenied
+                - aws-marketplace:ViewSubscriptions
+                - aws-marketplace:Subscribe
+                - aws-marketplace:Unsubscribe
+              Resource: &#34;*&#34;
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref CoreTable
+          BEDROCK_MODEL_ID: &#34;anthropic.claude-3-haiku-20240307-v1:0&#34;
+          # Chạy hàm coverLetterHandler
+          SPRING_CLOUD_FUNCTION_DEFINITION: coverLetterHandler
+      Events:
+        # 1. Generate (POST)
+        GenerateCoverLetter:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /cover-letters
+            Method: POST
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+        # 2. List All (GET)
+        ListCoverLetters:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /cover-letters
+            Method: GET
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+        # 3. Get One (GET /{id})
+        GetOneCoverLetter:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /cover-letters/{id}
+            Method: GET
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+        # 4. Delete (DELETE /{id})
+        DeleteCoverLetter:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /cover-letters/{id}
+            Method: DELETE
+            Auth:
+              Authorizer: CognitoAuthorizer
+</code></pre><p>Lưu ý quan trọng nhất đối với các hàm lambda là đoạn code chạy đúng logic nhưng vẫn bị lỗi AccessDenied? Đó là do Lambda mặc định không có quyền làm gì cả. Chúng ta phải cấp quyền cụ thể:</p><ol><li><code>bedrock:InvokeModel</code>: Cho phép Lambda gửi prompt đến mô hình Claude 3.</li><li><code>bedrock:InvokeModelWithResponseStream</code>: Cho phép gọi mô hình theo kiểu streaming (dữ liệu trả về theo luồng — token từng phần). Dùng cho ứng dụng cần nhận output dần dần (streaming responses).</li><li><code>aws-marketplace:ViewSubscriptions</code>: Cho phép xem trạng thái đăng ký các sản phẩm trên AWS Marketplace của tài khoản (liệt kê các subscription hiện có). Cần để kiểm tra xem tài khoản đã subscribe model bên thứ ba hay chưa.</li><li><code>aws-marketplace:Subscribe</code>:Vì Claude 3 là mô hình của bên thứ 3 (Anthropic), Lambda cần quyền kiểm tra xem tài khoản AWS của bạn đã đăng ký (Subscribe) model này chưa. Thiếu quyền này, Bedrock sẽ từ chối phục vụ.</li><li><code>aws-marketplace:Unsubscribe</code>: Cho phép hủy đăng ký (unsubscribe) một sản phẩm trên Marketplace.</li></ol><hr><h2 id=3-định-nghĩa-database--auth>3. Định nghĩa Database & Auth</h2><p>DynamoDB (Single Table)
+Chúng ta khai báo bảng với chế độ thanh toán PAY_PER_REQUEST (Serverless) - dùng bao nhiêu trả bấy nhiêu, không tốn phí duy trì khi không ai dùng.</p><pre tabindex=0><code>YAML
+
+    CoreTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: AICareerCoachDB
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: PK
+          AttributeType: S
+        - AttributeName: SK
+          AttributeType: S
+        - AttributeName: GSI1_PK
+          AttributeType: S
+        - AttributeName: GSI1_SK
+          AttributeType: S
+      KeySchema:
+        - AttributeName: PK
+          KeyType: HASH
+        - AttributeName: SK
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: GSI1
+          KeySchema:
+            - AttributeName: GSI1_PK
+              KeyType: HASH
+            - AttributeName: GSI1_SK
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+</code></pre><hr><h2 id=4-cognito-user-pool>4. Cognito User Pool</h2><p>Nơi quản lý người dùng. Chúng ta cấu hình AutoVerifiedAttributes: [email] để tự động gửi email xác thực khi đăng ký.</p><pre tabindex=0><code>YAML
+
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: CareerCoachUsers
+      AutoVerifiedAttributes: [email]
+      UsernameAttributes: [email]
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+      # Kích hoạt Trigger sau khi đăng ký để lưu vào DynamoDB
+      LambdaConfig:
+        PostConfirmation: !GetAtt PostSignupTriggerFunction.Arn
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: ReactClient
+      UserPoolId: !Ref UserPool
+      GenerateSecret: false # Web App (React) không dùng Secret
+      ExplicitAuthFlows: [ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH]
+
+  # Lambda nhỏ (NodeJS) để hứng sự kiện đăng ký và lưu user vào DB
+  # (Dùng Nodejs cho cái này vì nó khởi động cực nhanh và nhẹ)
+  PostSignupTriggerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: nodejs18.x
+      MemorySize: 128
+      Timeout: 5
+      Handler: index.handler
+      InlineCode: |
+        const { DynamoDBClient, PutItemCommand } = require(&#34;@aws-sdk/client-dynamodb&#34;);
+        const client = new DynamoDBClient({});
+        exports.handler = async (event) =&gt; {
+          if (event.triggerSource === &#34;PostConfirmation_ConfirmSignUp&#34;) {
+            const userId = event.request.userAttributes.sub;
+            const email = event.request.userAttributes.email;
+            const params = {
+              TableName: process.env.TABLE_NAME,
+              Item: {
+                PK: { S: `USER#${userId}` },
+                SK: { S: &#34;METADATA&#34; },
+                email: { S: email },
+                createdAt: { S: new Date().toISOString() }
+              }
+            };
+            try { await client.send(new PutItemCommand(params)); } 
+            catch (err) { console.error(err); }
+          }
+          return event;
+        };
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref CoreTable
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref CoreTable
+
+  # Cấp quyền cho Cognito được gọi Lambda Trigger
+  PostSignupTriggerPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref PostSignupTriggerFunction
+      Principal: cognito-idp.amazonaws.com
+      SourceArn: !GetAtt UserPool.Arn
+</code></pre><h2 id=5-frontend-hosting-s3--cloudfront-oac>5. Frontend Hosting (S3 + CloudFront OAC)</h2><p>Đây là kiến trúc hosting hiện đại và bảo mật nhất cho Static Web hiện nay.</p><p><img alt="S3 + CloudFront OAC" src=../../../images/5-Workshop/5.3-Infrastructure-as-code/cloudfront-oac.png></p><p>Các thành phần:</p><ul><li>S3 Bucket: Nơi chứa file index.html, js, css. Chế độ PublicAccessBlock được bật (Chặn truy cập trực tiếp từ internet).</li><li>CloudFront Distribution: CDN giúp cache nội dung và cung cấp HTTPS.</li><li>Origin Access Control (OAC): Dùng OAC. Đây là vệ sĩ đứng giữa. Nó ký request từ CloudFront gửi sang S3.</li></ul><p>Kết quả: Người dùng bắt buộc phải đi qua CloudFront (có HTTPS, có Cache). Nếu cố tình truy cập link S3 trực tiếp sẽ bị chặn (403 Forbidden).</p><pre tabindex=0><code>YAML
+
+    # Cấu hình bảo mật mới (OAC)
+  CloudFrontOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Description: &#34;Access Control for CV Analyzer&#34;
+        Name: !Sub &#34;OAC-${FrontendBucket}&#34;
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+</code></pre><pre tabindex=0><code>YAML
+
+    FrontendBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub &#34;career-coach-frontend-${AWS::AccountId}&#34; # Thêm ID tài khoản để chắc chắn không trùng tên
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  FrontendBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref FrontendBucket
+      PolicyDocument:
+        Version: &#34;2012-10-17&#34;
+        Statement:
+          - Sid: &#34;AllowCloudFrontServicePrincipal&#34;
+            Effect: Allow
+            Principal:
+              Service: &#34;cloudfront.amazonaws.com&#34; # Dùng Service Principal chuẩn (Luôn tồn tại)
+            Action: &#34;s3:GetObject&#34;
+            Resource: !Sub &#34;${FrontendBucket.Arn}/*&#34;
+            Condition:
+              StringEquals:
+                &#34;AWS:SourceArn&#34;: !Sub &#34;arn:aws:cloudfront::${AWS::AccountId}:distribution/${FrontendDistribution}&#34;
+
+  FrontendDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        DefaultRootObject: index.html
+        Origins:
+          - DomainName: !GetAtt FrontendBucket.RegionalDomainName # Lưu ý dùng RegionalDomainName
+            Id: S3Origin
+            OriginAccessControlId: !GetAtt CloudFrontOriginAccessControl.Id # Trỏ vào OAC mới
+            S3OriginConfig:
+              OriginAccessIdentity: &#34;&#34; # Để trống dòng này vì đã dùng OAC
+        DefaultCacheBehavior:
+          TargetOriginId: S3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods: [GET, HEAD, OPTIONS]
+          CachedMethods: [GET, HEAD, OPTIONS]
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+          - ErrorCode: 404
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+</code></pre><h2 id=6-outputs-kết-quả-đầu-ra>6. Outputs (Kết quả đầu ra)</h2><p>Sau khi deploy xong, CloudFormation sẽ trả về các thông số quan trọng để chúng ta cấu hình cho Frontend.</p><pre tabindex=0><code>YAML
+
+Outputs:
+  ApiEndpoint:
+    Description: &#34;API URL để dán vào Frontend .env&#34;
+    Value: !Sub &#34;https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com&#34;
+  CognitoUserPoolId:
+    Description: &#34;User Pool ID&#34;
+    Value: !Ref UserPool
+  CognitoClientId:
+    Description: &#34;App Client ID&#34;
+    Value: !Ref UserPoolClient
+  WebsiteURL:
+    Description: &#34;URL trang web React của bạn (CloudFront)&#34;
+    Value: !GetAtt FrontendDistribution.DomainName
+  S3BucketName:
+    Description: &#34;Tên Bucket để upload code Frontend&#34;
+    Value: !Ref FrontendBucket
+</code></pre><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=../../../vi/5-workshop/5.2-prerequiste/ title="Các bước chuẩn bị"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../../../vi/5-workshop/5.4-backend-development/ title="Phát triển Backend" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=../../../js/clipboard.min.js?1765276888></script><script src=../../../js/perfect-scrollbar.min.js?1765276888></script><script src=../../../js/perfect-scrollbar.jquery.min.js?1765276888></script><script src=../../../js/jquery.sticky.js?1765276888></script><script src=../../../js/featherlight.min.js?1765276888></script><script src=../../../js/highlight.pack.js?1765276888></script><script>hljs.initHighlightingOnLoad()</script><script src=../../../js/modernizr.custom-3.6.0.js?1765276888></script><script src=../../../js/learn.js?1765276888></script><script src=../../../js/hugo-learn.js?1765276888></script><link href=../../../mermaid/mermaid.css?1765276888 rel=stylesheet><script src=../../../mermaid/mermaid.js?1765276888></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>
